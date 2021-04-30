@@ -12,3 +12,7 @@ npm install --registry=https://registry.npm.taobao.org
 # 启动服务
 npm run dev
 ```
+
+自动发布
+
+- [https://github.com/marketplace/actions/deploy-to-github-pages](https://github.com/marketplace/actions/deploy-to-github-pages)
