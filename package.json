@@ -1,8 +1,8 @@
 {
-  "name": "vue-admin-template",
-  "version": "4.4.0",
+  "name": "vue-element-admin-demo",
+  "version": "0.0.1",
   "description": "A vue admin template with Element UI & axios & iconfont & permission control & lint",
-  "author": "Pan <panfree23@gmail.com>",
+  "author": "",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build:prod": "vue-cli-service build",
@@ -14,21 +14,24 @@
     "test:ci": "npm run lint && npm run test:unit"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-decoupled-document": "^27.1.0",
+    "@ckeditor/ckeditor5-vue2": "^1.0.5",
     "axios": "0.18.1",
     "core-js": "3.6.5",
     "element-ui": "2.13.2",
     "html-loader": "^2.1.2",
     "js-cookie": "2.2.0",
     "markdown-loader": "^6.0.0",
+    "mo-utils": "^0.0.7",
     "more-utils": "^1.0.4",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
-    "showdown": "^1.9.1",
     "vue": "2.6.10",
     "vue-cropper": "^0.5.6",
     "vue-router": "3.0.6",
-    "vuex": "3.1.0"
+    "vuex": "3.1.0",
+    "wangeditor": "^4.6.17"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.4.4",

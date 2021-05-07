@@ -8,7 +8,7 @@
 
 - 代码：[https://github.com/mouday/vue-element-admin-demo](https://github.com/mouday/vue-element-admin-demo)
 
-- 预览：[https://www.pengshiyu.com/vue-element-admin-demo](https://www.pengshiyu.com/vue-element-admin-demo/)
+- 预览：[https://mouday.github.io/vue-element-admin-demo/](https://mouday.github.io/vue-element-admin-demo/)
 
 ```bash
 # 安装依赖

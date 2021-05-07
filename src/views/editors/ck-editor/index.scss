@@ -1,0 +1,17 @@
+/* 全局修改生效 */
+#ck-editer {
+  .ck-editor__editable_inline {
+    font-size: 15px;
+
+    p {
+      margin: 0;
+      line-height: 2;
+    }
+    min-height: 400px;
+    border: 1px solid #ccc !important;
+
+    a {
+      color: #006eda;
+    }
+  }
+}

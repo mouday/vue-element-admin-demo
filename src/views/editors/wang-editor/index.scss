@@ -1,0 +1,38 @@
+.mo-wang-editor {
+  // 工具栏icon
+  .w-e-toolbar .w-e-menu {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  // 工具栏提示文字
+  .w-e-menu-tooltip {
+    font-size: 12px;
+  }
+
+  // 工具栏边框
+  .w-e-toolbar {
+    border: 1px solid #dcdfe6 !important;
+    border-bottom: none !important;
+  }
+
+  // 编辑区域边框
+  .w-e-text-container {
+    border: 1px solid #dcdfe6 !important;
+  }
+
+  // 默认提示文字
+  .w-e-text-container .placeholder {
+    font-size: 12px;
+    color: #c1c5cd;
+  }
+
+  // 上传按钮
+  .w-e-menu .w-e-panel-container .w-e-up-img-container .w-e-up-btn {
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    font-size: 24px;
+  }
+}

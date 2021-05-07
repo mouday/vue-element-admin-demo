@@ -90,13 +90,45 @@ export const constantRoutes = [
       },
       {
         path: "markdown",
-        name: "markdown",
+        name: "Markdown",
         component: () => import("@/views/markdown/index"),
         meta: { title: "Markdown", icon: "tree" }
+      },
+      {
+        path: "notify",
+        name: "Notify",
+        component: () => import("@/views/notify/index"),
+        meta: { title: "Notify通知", icon: "tree" }
+      },
+      {
+        path: "save-file",
+        name: "SaveFile",
+        component: () => import("@/views/save-file/index"),
+        meta: { title: "保存文件", icon: "tree" }
       }
     ]
   },
-
+  {
+    path: "/editors",
+    component: Layout,
+    redirect: "/editors/wang-editor",
+    name: "Editors",
+    meta: { title: "Editors", icon: "el-icon-s-help" },
+    children: [
+      {
+        path: "/editors/wang-editor",
+        name: "WangEditor",
+        component: () => import("@/views/editors/wang-editor/index"),
+        meta: { title: "WangEditor", icon: "form" }
+      },
+      {
+        path: "/editors/ck-editor",
+        name: "CKEditor",
+        component: () => import("@/views/editors/ck-editor/index"),
+        meta: { title: "CKEditor", icon: "form" }
+      }
+    ]
+  },
   {
     path: "/form",
     component: Layout,
