@@ -33,6 +33,11 @@ if (process.env.NODE_ENV === "production") {
   mockXHR();
 }
 
+// VueClipboard
+import VueClipboard from "vue-clipboard2";
+
+Vue.use(VueClipboard);
+
 // set ElementUI lang to EN
 // Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明

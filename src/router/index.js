@@ -105,6 +105,12 @@ export const constantRoutes = [
         name: "SaveFile",
         component: () => import("@/views/save-file/index"),
         meta: { title: "保存文件", icon: "tree" }
+      },
+      {
+        path: "clipboard",
+        name: "Clipboard",
+        component: () => import("@/views/clipboard/index"),
+        meta: { title: "点击复制", icon: "tree" }
       }
     ]
   },

@@ -1,4 +1,5 @@
 "use strict";
+
 const path = require("path");
 const defaultSettings = require("./src/settings.js");
 
@@ -75,11 +76,50 @@ module.exports = {
       .end()
       .use("vue-markdown-loader")
       .loader("vue-markdown-loader/lib/markdown-compiler")
+      // .options(markdown);
       .options({
         raw: true,
         // do not automatically extract script and style tags
         // see: https://github.com/QingWei-Li/vue-markdown-loader/issues/27
-        preventExtract: true 
+        preventExtract: true,
+        preset: "default",
+        breaks: true,
+        linkify: true, // 自动识别连接
+        // highlight: function (str, lang) {
+        //   if (lang && hljs.getLanguage(lang)) {
+        //     try {
+        //       return `<pre class="hljs" onclick="javascript:()=>{console.log('click')}"><code>` +
+        //              hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
+        //              '</code></pre>';
+        //     } catch (__) {}
+        //   }
+
+        //   return '<pre class="hljs" v-copy><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+        // },
+        use: [
+          /* markdown-it plugin */
+          // require("markdown-it-xxx"),
+          /* or */
+          // a标签新窗口打开
+          // ref:
+          // https://github.com/QingWei-Li/vue-markdown-loader
+          // https://github.com/markdown-it/markdown-it/blob/master/docs/architecture.md#renderer
+          // https://github.com/markdown-it/markdown-it-for-inline
+          [
+            require("markdown-it-for-inline"),
+            "url_new_win",
+            "link_open",
+            function(tokens, idx) {
+              var aIndex = tokens[idx].attrIndex("target");
+
+              if (aIndex < 0) {
+                tokens[idx].attrPush(["target", "_blank"]);
+              } else {
+                tokens[idx].attrs[aIndex][1] = "_blank";
+              }
+            }
+          ]
+        ]
       });
 
     // set svg-sprite-loader
