@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 手动部署
+
 # build
 npm run build:prod
 
