@@ -111,6 +111,12 @@ export const constantRoutes = [
         name: "Clipboard",
         component: () => import("@/views/clipboard/index"),
         meta: { title: "点击复制", icon: "tree" }
+      },
+      {
+        path: "qr-code",
+        name: "QRCode",
+        component: () => import("@/views/qr-code/index"),
+        meta: { title: "二维码", icon: "tree" }
       }
     ]
   },
