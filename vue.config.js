@@ -36,6 +36,7 @@ module.exports = {
   devServer: {
     port: port,
     open: true,
+    host: 'localhost',
     overlay: {
       warnings: false,
       errors: true

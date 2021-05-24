@@ -117,7 +117,15 @@ export const constantRoutes = [
         name: "QRCode",
         component: () => import("@/views/qr-code/index"),
         meta: { title: "二维码", icon: "tree" }
+      },
+      {
+        path: "css3",
+        name: "Css3",
+        component: () => import('@/views/css3/index'),
+        meta: { title: "css3", icon: "tree" }
       }
+
+
     ]
   },
   {

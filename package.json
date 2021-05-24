@@ -17,6 +17,7 @@
     "@ckeditor/ckeditor5-build-decoupled-document": "^27.1.0",
     "@ckeditor/ckeditor5-vue2": "^1.0.5",
     "axios": "0.18.1",
+    "copy-to-clipboard": "^3.3.1",
     "core-js": "3.6.5",
     "element-ui": "2.13.2",
     "file-saver": "^2.0.5",

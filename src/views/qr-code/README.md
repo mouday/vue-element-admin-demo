@@ -6,3 +6,15 @@
 ```bash
 npm i qrcode -S
 ```
+
+实现代码
+
+```js
+import QRCode from "qrcode";
+
+async function createQRCode() {
+  this.url = await QRCode.toDataURL(this.value, {
+    margin: 0
+  });
+}
+```
