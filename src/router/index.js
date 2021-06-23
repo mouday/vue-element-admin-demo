@@ -58,6 +58,21 @@ export const constantRoutes = [
   },
 
   {
+    path: "/tool",
+    component: Layout,
+    redirect: "/tool/schema2code",
+    name: "Tool",
+    meta: { title: "工具", icon: "el-icon-s-help" },
+    children: [
+      {
+        path: "schema2code",
+        component: () => import("@/views/schema2code/index.vue"),
+        meta: { title: "schema2code", icon: "dashboard" }
+      }
+    ]
+  },
+
+  {
     path: "/example",
     component: Layout,
     redirect: "/example/table",
@@ -121,11 +136,9 @@ export const constantRoutes = [
       {
         path: "css3",
         name: "Css3",
-        component: () => import('@/views/css3/index'),
+        component: () => import("@/views/css3/index"),
         meta: { title: "css3", icon: "tree" }
       }
-
-
     ]
   },
   {
