@@ -4,5 +4,5 @@
 - github: [https://github.com/sudodoki/copy-to-clipboard](https://github.com/sudodoki/copy-to-clipboard)
 
 ```bash
-npm install --save copy-to-clipboard
+cnpm install --save copy-to-clipboard
 ```
