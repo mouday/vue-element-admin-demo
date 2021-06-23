@@ -1,0 +1,40 @@
+<template>
+  <!-- {{ config.name }} table -->
+  <el-table :data="list" stripe style="width: 100%">
+    {% for  item in config.props %}
+      <el-table-column prop="{{ item.prop }}" label="{{ item.label }}">
+        <template v-slot="{row}">
+          <span v-text="row.{{ item.prop }} || '-'"></span>
+        </template>
+      </el-table-column>
+    {% endfor %}
+    <el-table-column prop="" label="显示/隐藏">
+      <template v-slot="{row}"></template>
+    </el-table-column>
+    <el-table-column prop="" label="编辑">
+      <template v-slot="{row}"></template>
+    </el-table-column>
+    <el-table-column prop="" label="删除">
+      <template v-slot="{row}"></template>
+    </el-table-column>
+  </el-table>
+</template>
+<script>
+  export default {
+    name: '',
+    props: { // 数据行
+      list: {
+        type: Array,
+        default: null
+      }
+    },
+    components: {},
+    data() {
+      return {};
+    },
+    computed: {},
+    methods: {},
+    created() {}
+  };
+</script>
+<style lang="scss" scoped></style>
