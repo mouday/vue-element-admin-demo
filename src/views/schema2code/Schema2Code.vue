@@ -1,7 +1,7 @@
 <template>
 
   <codemirror
-    v-model="code_"
+    :value="value_"
     :options="cmOptions"
   ></codemirror>
 
@@ -24,8 +24,8 @@ export default {
   name: 'Schema2Code',
 
   props: {
-    config: { type: String },
-    template: { type: String },
+    value: { type: String },
+    // template: { type: String },
   },
 
   components: {
@@ -36,7 +36,7 @@ export default {
     // https://www.npmjs.com/package/vue-codemirror
     // https://codemirror.net/
     return {
-      code_: '',
+      // code_: '',
       cmOptions: {
         // codemirror options
         tabSize: 4,
@@ -55,21 +55,30 @@ export default {
   //   },
   // },
 
-  computed: {},
+  computed: {
+    value_: {
+      get() {
+          return this.value;
+      },
+      set(value) {
+          this.$emit('update:value', value);
+      }
+    }
+  },
 
   methods: {
     async getData() {},
 
-    handleClick(tab, event) {
-      console.log(tab, event);
-    },
+    // handleClick(tab, event) {
+    //   console.log(tab, event);
+    // },
   },
 
   created() {
     // this.getData();
-    console.log(this.config);
+    // console.log(this.config);
 
-    this.code_ = env.render(this.template, { config: JSON.parse(this.config) });
+    // this.code_ = env.render(this.template, { config: JSON.parse(this.config)});
   },
 };
 </script>

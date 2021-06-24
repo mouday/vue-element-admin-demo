@@ -6,40 +6,32 @@
       @tab-click="handleClick"
     >
       <el-tab-pane
-        label="config"
+        label="配置文件"
         name="config"
       >
         <JsonEditor v-model="config" />
       </el-tab-pane>
 
       <el-tab-pane
-        label="list.vue"
+        label="前端代码"
         name="list"
       >
-        <Schema2Code
+        <!-- <Schema2Code
           v-if="activeName=='list'"
           :config="config"
           template="list.njk"
-        />
+        /> -->
+
+        <CodeTree :config="config" />
       </el-tab-pane>
 
       <el-tab-pane
-        label="edit.vue"
+        label="后端代码"
         name="edit"
       >
-        <Schema2Code
-          v-if="activeName=='edit'"
-          :config="config"
-          template="edit.njk"
-        />
+        <div>后端代码</div>
       </el-tab-pane>
-
-      <el-tab-pane
-        label="定时任务补偿"
-        name="fourth"
-      >定时任务补偿</el-tab-pane>
     </el-tabs>
-
   </div>
 </template>
 
@@ -59,6 +51,7 @@ const defaultConfig = {
 
 import JsonEditor from './JsonEditor.vue';
 import Schema2Code from './Schema2Code.vue';
+import CodeTree from './code-tree/index.vue';
 
 export default {
   name: 'index',
@@ -68,6 +61,7 @@ export default {
   components: {
     JsonEditor,
     Schema2Code,
+    CodeTree,
   },
 
   data() {

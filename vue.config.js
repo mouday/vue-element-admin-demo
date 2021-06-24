@@ -16,8 +16,7 @@ function resolve(dir) {
 // port = 9528 npm run dev OR npm run dev --port = 9528
 const port = process.env.port || process.env.npm_config_port || 9528; // dev port
 
-const publicPath =
-  process.env.NODE_ENV === "development" ? "/" : "/vue-element-admin-demo";
+const publicPath = process.env.VUE_APP_PUBLIC_PATH
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
