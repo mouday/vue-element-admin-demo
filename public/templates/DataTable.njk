@@ -4,21 +4,25 @@
     {% for  item in config.props %}
       <el-table-column prop="{{ item.prop }}" label="{{ item.label }}">
         <template v-slot="{row}">
-          <span v-text="row.{{ item.prop }} || '-'"></span>
+          {% raw %}{{{% endraw %}row.{{ item.prop }} || '-'{% raw %}}}{% endraw %}
         </template>
       </el-table-column>
     {% endfor %}
+
     <el-table-column prop="" label="显示/隐藏">
       <template v-slot="{row}"></template>
     </el-table-column>
+
     <el-table-column prop="" label="编辑">
       <template v-slot="{row}"></template>
     </el-table-column>
+
     <el-table-column prop="" label="删除">
       <template v-slot="{row}"></template>
     </el-table-column>
   </el-table>
 </template>
+
 <script>
   export default {
     name: 'DataTable',
@@ -38,4 +42,7 @@
     created() {}
   };
 </script>
-<style lang="scss" scoped></style>
+
+<style lang="scss" scoped>
+
+</style>

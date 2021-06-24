@@ -14,6 +14,7 @@ import { env } from './utils.js';
 import { codemirror } from 'vue-codemirror';
 // language js
 import 'codemirror/mode/vue/vue.js';
+import 'codemirror/mode/php/php.js';
 // require styles
 import 'codemirror/lib/codemirror.css';
 
@@ -25,6 +26,7 @@ export default {
 
   props: {
     value: { type: String },
+    mode: { type: String, default: 'text/x-vue' },
     // template: { type: String },
   },
 
@@ -40,7 +42,7 @@ export default {
       cmOptions: {
         // codemirror options
         tabSize: 4,
-        mode: 'text/x-vue',
+        mode: this.mode,
         theme: 'default',
         lineNumbers: true,
         line: true,

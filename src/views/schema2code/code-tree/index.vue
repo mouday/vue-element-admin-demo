@@ -1,15 +1,17 @@
 <template>
   <div class="code-tree-container">
-    <el-tree
+    <ContentsTree
       class="code-tree"
       :data="data"
-      default-expand-all
-      :props="defaultProps"
-      @node-click="handleNodeClick"
-    ></el-tree>
+      :currentNodeKey.sync="currentNodeKey"
+      @change="handleContentsChange"
+    />
 
     <div class="code-content">
-      <Schema2Code :value="code" />
+      <Schema2Code
+        :value="code"
+        :mode="mode"
+      />
     </div>
 
   </div>
@@ -18,49 +20,28 @@
 <script>
 // created at 2021-06-24
 import Schema2Code from '@/views/schema2code/Schema2Code.vue';
-import { render } from '@/views/schema2code/utils.js';
+import { render, toPascal } from '@/views/schema2code/utils.js';
+import ContentsTree from '@/views/schema2code/contents-tree/index.vue';
 
 export default {
   name: 'index',
 
   props: {
     config: { type: String },
+    data: { type: Array },
+    mode: { type: String, default: 'text/x-vue' },
   },
 
-  components: { Schema2Code },
+  components: { Schema2Code, ContentsTree },
 
   data() {
     return {
-      // template: '',
       code: '',
-      data: [
-        {
-          label: 'list.vue',
-          children: [
-            {
-              label: 'index.vue',
-              value: 'list.njk',
-            },
-            {
-              label: 'DataTable.vue',
-              value: 'DataTable.njk',
-            },
-          ],
-        },
-        {
-          label: 'edit.vue',
-          children: [
-            {
-              label: 'edit.vue',
-              value: 'edit.njk',
-            },
-            {
-              label: 'dialog-edit.vue',
-              value: 'dialog-edit.njk',
-            },
-          ],
-        },
-      ],
+
+      checkedKeys: [],
+
+      currentNodeKey: '',
+
       defaultProps: {
         children: 'children',
         label: 'label',
@@ -73,8 +54,10 @@ export default {
   methods: {
     async getData() {},
 
-    handleNodeClick(data) {
-      console.log(data);
+    handleContentsChange(data) {
+      // console.log(data);
+      console.log(this.config);
+
       let template = null;
 
       if (data.value) {
@@ -83,12 +66,28 @@ export default {
         template = data.children[0].value;
       }
 
-      this.code = render.render(template, { config: JSON.parse(this.config) });
+      let config = JSON.parse(this.config);
+
+      // this.currentNodeKey = template;
+      this.code = render.render(template, {
+        config: {
+          ...config,
+          pascalName: toPascal(config.name),
+        },
+      });
     },
+
+    // handleContentsChange(data) {
+    //   console.log(data);
+    // },
   },
 
   created() {
-    this.getData();
+    // this.getData();
+    // this.handleNodeClick(this.data[0]);
+    // if(){
+    //   this.currentNodeKey
+    // }
   },
 };
 </script>
