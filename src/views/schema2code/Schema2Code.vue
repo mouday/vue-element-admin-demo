@@ -46,6 +46,7 @@ export default {
         theme: 'default',
         lineNumbers: true,
         line: true,
+        lineWrapping: true,
         // more codemirror options, 更多 codemirror 的高级配置...
       },
     };

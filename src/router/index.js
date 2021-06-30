@@ -141,6 +141,33 @@ export const constantRoutes = [
       }
     ]
   },
+
+
+  {
+    path: "/curd",
+    component: Layout,
+    redirect: "/curd/list",
+    name: "curd",
+    meta: { title: "CURD", icon: "el-icon-s-help" },
+    children: [
+      {
+        path: "/curd/list",
+        name: "curd-list",
+        component: () => import("@/views/curd/list/index.vue"),
+        meta: { title: "CURD-list", icon: "form" }
+      },
+
+      {
+        path: "/curd/edit",
+        name: "curd-edit",
+        component: () => import("@/views/curd/edit/index.vue"),
+        meta: { title: "CURD-edit", icon: "form" }
+      },
+
+
+    ]
+  },
+
   {
     path: "/editors",
     component: Layout,
