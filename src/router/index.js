@@ -138,10 +138,15 @@ export const constantRoutes = [
         name: "Css3",
         component: () => import("@/views/css3/index"),
         meta: { title: "css3", icon: "tree" }
+      },
+      {
+        path: "captcha",
+        name: "captcha",
+        component: () => import("@/views/captcha/index"),
+        meta: { title: "验证码", icon: "tree" }
       }
     ]
   },
-
 
   {
     path: "/curd",
@@ -162,9 +167,38 @@ export const constantRoutes = [
         name: "curd-edit",
         component: () => import("@/views/curd/edit/index.vue"),
         meta: { title: "CURD-edit", icon: "form" }
+      }
+    ]
+  },
+
+  {
+    path: "/doc",
+    name: "doc",
+    component: Layout,
+    meta: {
+      title: "文档",
+      icon: "form"
+    },
+    redirect: "/doc/learing-note",
+    children: [
+      {
+        path: "/doc/learing-note",
+        name: "learing-note",
+        component: () => import("@/views/iframe/index"),
+        meta: { title: "学习笔记", icon: "form" },
+        props: {
+          src: "https://mouday.github.io/LearningNote/"
+        }
       },
-
-
+      {
+        path: "/doc/panjiachen",
+        name: "panjiachen",
+        component: () => import("@/views/iframe/index"),
+        meta: { title: "vue-element-admin", icon: "form" },
+        props: {
+          src: "https://panjiachen.gitee.io/vue-element-admin-site/zh/"
+        }
+      }
     ]
   },
 
@@ -263,16 +297,16 @@ export const constantRoutes = [
     ]
   },
 
-  {
-    path: "external-link",
-    component: Layout,
-    children: [
-      {
-        path: "https://panjiachen.github.io/vue-element-admin-site/#/",
-        meta: { title: "External Link", icon: "link" }
-      }
-    ]
-  },
+  // {
+  //   path: "external-link",
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: "https://panjiachen.github.io/vue-element-admin-site/#/",
+  //       meta: { title: "External Link", icon: "link" }
+  //     }
+  //   ]
+  // },
 
   // 404 page must be placed at the end !!!
   { path: "*", redirect: "/404", hidden: true }

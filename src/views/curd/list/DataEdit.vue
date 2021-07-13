@@ -5,7 +5,7 @@
       v-if="id"
       type="text"
       size="mini"
-      icon="el-icon-edit"
+      icon="el-icon-edit-outline"
       @click="handleOpen"
     ></el-button>
 
