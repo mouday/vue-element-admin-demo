@@ -179,8 +179,14 @@ export const constantRoutes = [
       title: "文档",
       icon: "form"
     },
-    redirect: "/doc/learing-note",
+    redirect: "/doc/article",
     children: [
+      {
+        path: "article",
+        name: "article",
+        component: () => import('@/views/article/index.vue'),
+        meta: { title: "好文收录", icon: "form" },
+      },
       {
         path: "/doc/learing-note",
         name: "learing-note",
