@@ -133,6 +133,14 @@ export const constantRoutes = [
         component: () => import("@/views/qr-code/index"),
         meta: { title: "二维码", icon: "tree" }
       },
+
+      {
+        path: "html-to-image",
+        name: "html-to-image",
+        component: () => import("@/views/html-to-image/index.vue"),
+        meta: { title: "网页截图", icon: "tree" }
+      },
+
       {
         path: "css3",
         name: "Css3",
@@ -184,8 +192,8 @@ export const constantRoutes = [
       {
         path: "article",
         name: "article",
-        component: () => import('@/views/article/index.vue'),
-        meta: { title: "好文收录", icon: "form" },
+        component: () => import("@/views/article/index.vue"),
+        meta: { title: "好文收录", icon: "form" }
       },
       {
         path: "/doc/learing-note",
