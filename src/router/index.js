@@ -142,6 +142,13 @@ export const constantRoutes = [
       },
 
       {
+        path: "ityped",
+        name: "ityped",
+        component: () => import("@/views/ityped/index"),
+        meta: { title: "输入动画", icon: "tree" }
+      },
+
+      {
         path: "css3",
         name: "Css3",
         component: () => import("@/views/css3/index"),
